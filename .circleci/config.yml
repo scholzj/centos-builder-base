@@ -14,13 +14,13 @@ jobs:
           command: docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
       - deploy:
           name: Tag docker image
-          command: docker tag scholzj/centos-builder-base:centos7-latest docker.io/scholzj/centos-builder-base:centos7-latest
+          command: docker tag scholzj/centos-builder-base:travis docker.io/scholzj/centos-builder-base:centos7-latest
       - deploy:
           name: Push Docker image
           command: docker push docker.io/scholzj/centos-builder-base:centos7-latest
       - deploy:
           name: Tag docker image
-          command: docker tag scholzj/centos-builder-base:latest docker.io/scholzj/centos-builder-base:latest
+          command: docker tag scholzj/centos-builder-base:travis docker.io/scholzj/centos-builder-base:latest
       - deploy:
           name: Push Docker image
           command: docker push docker.io/scholzj/centos-builder-base:latest
